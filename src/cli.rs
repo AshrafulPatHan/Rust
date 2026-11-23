@@ -11,5 +11,20 @@ fn main() {
 
     let name = ask("Enter your name: ");
     let age  = ask("Enter your age : ");
-    println!("Name : {name} , Age: {age}");
+    // println!("Name : {name} , Age: {age}");
+
+    println!("
+  +----------------------+----------------------+ 
+  |                      |                      | 
+  |         Name         |         Age          | 
+  +----------------------+----------------------+ 
+  |                      |                      | 
+  |        {name}        |        {age}         | 
+  |                      |                      | 
+  +----------------------+----------------------+ 
+  |                                             | 
+  |     Hello {name}! you are {age} year old    | 
+  |                                             | 
+  +---------------------------------------------+ 
+    ");
 }
