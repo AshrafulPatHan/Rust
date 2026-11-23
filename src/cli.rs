@@ -1,16 +1,15 @@
 use std::io::{self, Write};
 
 fn main() {
-    print!("Enter your name: ");
-    // Flush stdout so the prompt appears before waiting for input
-    io::stdout().flush().unwrap();
+    let ask = |msg: &str| {
+        print!("{msg}");
+        io::stdout().flush().unwrap();
+        let mut s = String::new();
+        io::stdin().read_line(&mut s).expect("Failed to read line");
+        s.trim().to_string()
+    };
 
-    let mut input = String::new();
-    io::stdin()
-        .read_line(&mut input)
-        .expect("Failed to read line");
-
-    // Trim the trailing newline character (\n or \r\n)
-    let name = input.trim();
-    println!("Hello, {name}!");
+    let name = ask("Enter your name: ");
+    let age  = ask("Enter your age : ");
+    println!("Name : {name} , Age: {age}");
 }
